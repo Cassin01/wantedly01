@@ -4,7 +4,7 @@
 
 ### 実行方法
 
-以下のコマンドを``task01``以下で実行してください
+以下のコマンドを``task01``ディレクトリ以下で実行してください
 
 ```shell
 docker build -t echo .
@@ -28,3 +28,61 @@ curl -XGET -H 'Content-Type:application/json' http://localhost:8080/
 ```
 
 ## 課題２
+
+リクエスト
+
+```shell
+curl -XGET -H 'Content-Type:application/json' https://task02.herokuapp.com/
+```
+
+レスポンス
+
+```json
+{
+  "message": "Hello World!!"
+}
+```
+
+### デプロイの方法
+
+#### 1. main.go, Dockerfileの作成
+
+#### 2. Heroku へログイン
+
+```shell
+heroku login
+heroku container:login
+```
+
+#### 3. ビルド
+
+```shell
+docker build -t herokuexp .
+docker run -e "PORT=3000" -p 3000:3000 -t herokuexp
+```
+
+#### 4. デプロイ
+
+Herokuアプリの作成
+
+```shell
+heroku create {アプリ名}
+```
+
+push
+
+```shell
+heroku container:push web
+```
+
+release
+
+```shell
+heroku container:release web
+```
+
+ブラウザで確認
+
+```shell
+heroku open
+```
