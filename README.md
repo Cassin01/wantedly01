@@ -65,6 +65,9 @@ docker run -e "PORT=3000" -p 3000:3000 -t herokuexp
 
 Herokuアプリの作成
 
+``task2``ののディレクトリ上で実行以下のコマンドを実行してください
+
+
 ```shell
 heroku create {アプリ名}
 ```

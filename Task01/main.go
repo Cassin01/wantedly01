@@ -9,7 +9,7 @@ import (
 func jsonResponse(rw http.ResponseWriter, req *http.Request) {
   response := []byte(`
       {
-        "message": "Hello World!!",
+        "message": "Hello World!!"
       }
   `)
 

@@ -27,17 +27,17 @@ heroku create {アプリ名}
 push
 
 ```shell
-heroku container:push web
+heroku container:push web --app {アプリ名}
 ```
 
 release
 
 ```shell
-heroku container:release web
+heroku container:release web --app {アプリ名}
 ```
 
 ブラウザで確認
 
 ```shell
-heroku open
+heroku open --app {アプリ名}
 ```
